@@ -33,12 +33,46 @@ export default function App() {
       <Navbar />
 
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<ExploreBooks />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/book/:id" element={<BookDetails />} />
-        <Route path="/reader/:id" element={<Reader />} />
-        <Route path="/favorites" element={<Favorites />} />
+
+        <Route
+          path="/explore"
+          element={<ExploreBooks />}
+        />
+
+        <Route
+          path="/categories"
+          element={<Categories />}
+        />
+
+        <Route
+          path="/book/:id"
+          element={<BookDetails />}
+        />
+
+        <Route
+          path="/reader/:id"
+          element={<Reader />}
+        />
+
+        <Route
+          path="/favorites"
+          element={<Favorites />}
+        />
+
+        {/* Authentication Routes */}
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* Protected User Route */}
         <Route
           path="/my-library"
           element={
@@ -48,9 +82,7 @@ export default function App() {
           }
         />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
+        {/* Admin Dashboard */}
         <Route
           path="/admin"
           element={
@@ -60,6 +92,7 @@ export default function App() {
           }
         />
 
+        {/* Admin - Add Book */}
         <Route
           path="/admin/add"
           element={
@@ -69,6 +102,7 @@ export default function App() {
           }
         />
 
+        {/* Admin - Edit Book */}
         <Route
           path="/admin/edit/:id"
           element={
@@ -78,7 +112,11 @@ export default function App() {
           }
         />
 
-        <Route path="*" element={<NotFound />} />
+        {/* 404 */}
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
 
       <Footer />
